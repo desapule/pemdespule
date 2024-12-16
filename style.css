@@ -1,0 +1,363 @@
+ /* Reset Margin dan Padding */
+* {
+    margin: 0; /* Menghilangkan margin default dari semua elemen */
+    padding: 0; /* Menghilangkan padding default dari semua elemen */
+    box-sizing: border-box; /* Menghitung padding dan border sebagai bagian dari ukuran elemen */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Mengatur font halaman menjadi Arial atau sans-serif */
+    line-height: 1.6; /* Mengatur jarak antar baris teks untuk mempermudah membaca */
+}
+
+/* Style untuk header */
+.header {
+    display: flex; /* Menyusun konten header secara horizontal dengan Flexbox */
+    justify-content: space-between; /* Menempatkan elemen di ujung kiri dan kanan */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    padding: 10px 30px; /* Menambahkan padding di sekitar konten header */
+    background-color: hsla(358, 79%, 23%, 0.916); /* Mengatur warna latar belakang header menggunakan HSL */
+    position: fixed; /* Membuat header tetap di bagian atas halaman meskipun digulir */
+    top: 0; /* Menempatkan header di bagian atas halaman */
+    left: 0; /* Menempatkan header di sisi kiri */
+    width: 100%; /* Memastikan header memenuhi lebar layar */
+    z-index: 1000; /* Memastikan header berada di lapisan teratas */
+}
+
+.logo img {
+    max-height: 60px; /* Membatasi tinggi maksimal gambar logo */
+    width: auto; /* Menjaga proporsi lebar gambar sesuai dengan tingginya */
+}
+
+/* Style untuk navigasi */
+nav {
+    display: flex; /* Mengatur navigasi menjadi baris horizontal */
+    justify-content: flex-end; /* Menempatkan elemen navigasi di ujung kanan */
+    align-items: center; /* Menyelaraskan elemen navigasi secara vertikal di tengah */
+}
+
+.nav-item {
+    list-style-type: none; /* Menghilangkan bullet points pada daftar navigasi */
+    display: flex; /* Menyusun item navigasi secara horizontal */
+}
+
+.nav-item li {
+    margin: 0 15px; /* Menambahkan jarak antara item navigasi */
+}
+
+.nav-item li a {
+   position: relative;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    color: #EFEFEE; /* Warna teks */
+    font-size: 18px; /* Ukuran font */
+    padding: 4px 0; /* Memberikan padding vertikal */
+}
+
+.nav-item li a:hover {
+    color: rgba(244, 244, 244, 0.929); /* Mengubah warna teks saat link dihover menjadi lebih terang */
+    
+}
+
+/* Efek ketika link diklik atau dalam keadaan aktif */
+.nav-item li a:focus, 
+.nav-item li a:active {
+    color: rgba(244, 244, 244, 0.929); /* Warna saat link aktif */
+    text-decoration: underline; /* Tambahkan garis bawah */
+}
+
+/* Jika ingin menambahkan animasi garis bawah yang lebih halus */
+.nav-item li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgba(244, 244, 244, 0.929); /* Warna garis bawah */
+    transition: width 0.3s ease;
+}
+
+.nav-item li a:hover::after,
+.nav-item li a:focus::after,
+.nav-item li a:active::after {
+    width: 100%; /* Garis ba
+    wah akan muncul selebar link saat dihover atau diklik */
+}
+.menu-icon{
+    display: none;
+}
+.menu-icon i {
+    color: #fff;
+    font-size: 30px;
+    
+}
+
+/* .closeBtn, .menuBtn{
+    font-size: 28px;
+    margin: 0px 20px;
+    display: none;
+    
+} */
+ 
+/* Banner */
+.benner {
+    height: 100vh; /* Mengatur tinggi banner sesuai dengan tinggi viewport (layar penuh) */
+    background-image: url('propertii/FOTO24.jpeg'); /* Menetapkan gambar latar belakang banner */
+    background-size: cover; /* Membuat gambar menutupi seluruh area banner */
+    background-position: center; /* Menempatkan gambar latar di tengah */
+    position: relative; /* Mengatur posisi banner relatif untuk elemen lain di dalamnya */
+    display: flex; /* Menggunakan Flexbox untuk menyusun konten di dalam banner */
+    justify-content: center; /* Menyelaraskan konten di tengah secara horizontal */
+    align-items: center; /* Menyelaraskan konten di tengah secara vertikal */
+}
+
+.benner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0) 25%);
+}
+
+
+.welcome-box {
+    border: 3px solid white; /* Tambahkan border putih di sekitar teks */
+    padding: 20px; /* Menambahkan ruang di dalam kotak */
+    text-align: center; /* Teks di dalam kotak menjadi tengah */
+    display: inline-block; /* Agar lebar kotak mengikuti isi teks */
+    border-radius: 2px; /* Membuat sudut kotak melengkung */
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Memberikan lapisan semi-transparan di atas gambar latar */
+    width: 100%; /* Overlay menutupi seluruh lebar banner */
+    height: 100%; /* Overlay menutupi seluruh tinggi banner */
+    display: flex; /* Menyusun konten dalam overlay secara fleksibel */
+    flex-direction: column; /* Menyusun konten overlay secara vertikal */
+    justify-content: center; /* Menempatkan konten di tengah secara vertikal */
+    align-items: center; /* Menempatkan konten di tengah secara horizontal */
+}
+
+.welcome, .title {
+    color: white; /* Mengatur warna teks menjadi putih */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    z-index: 1; /* Memastikan teks muncul di atas overlay */
+    letter-spacing: 2px; /* Menambahkan spasi antar huruf */
+    margin: 0; /* Menghilangkan margin pada elemen teks */
+}
+
+.welcome {
+    font-size: 2em; /* Mengatur ukuran font teks "Welcome" */
+}
+
+.home {
+    background-color: #ffffff;
+    text-decoration-color: #ffffff;
+}
+
+#ham-menu {
+    display: none;
+}
+@media only screen and (max-width:991px){
+    html {
+    font-size: 56.25;
+}}
+header {
+    padding: 2.2rem 5rem;
+}
+
+
+#ham-menu {
+    display: block;
+    color: #ffffff;
+}
+
+.logo img, #ham-menu {
+    font-size: 1.7rem;
+
+}
+/* Style untuk elemen lainnya */
+.visi-misi, .struktur, .jenis-bidang, .nav-item {
+    width: 100%; /* Mengatur lebar gambar sesuai dengan layar */
+    height: auto; /* Tinggi gambar mengikuti proporsi */
+    max-width: 900px; /* Membatasi lebar maksimal agar tetap terlihat baik di desktop */
+}
+
+
+/* Animasi otomatis untuk slider */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-33.33%); }
+    45% { transform: translateX(-33.33%); }
+    50% { transform: translateX(-66.66%); }
+    70% { transform: translateX(-66.66%); }
+    75% { transform: translateX(0); }
+    95% { transform: translateX(0); }
+  }
+  
+
+  
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.33%); }
+    66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+  }
+
+/* Style pegawai */
+.pegawai {
+    padding: 50px; /* Menambahkan padding di sekitar konten pegawai */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    
+}
+
+.pegawai-item {
+    display: inline-block; /* Menampilkan item pegawai sebagai elemen blok sebaris */
+    margin: 20px; /* Menambahkan jarak di sekitar setiap item pegawai */
+    text-align: center; /* Menyelaraskan teks di dalam item ke tengah */
+}
+
+.pegawai-item img {
+    width: 150px; /* Mengatur lebar gambar pegawai */
+    height: 150px; /* Mengatur tinggi gambar pegawai */
+    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+    margin-bottom: 10px; /* Menambahkan jarak di bawah gambar */
+}
+
+/* Style peta */
+.maps-container {
+    position: relative; /* Memastikan div bersifat relatif untuk membantu positioning */
+    width: 100%; /* Lebar penuh sesuai layar */
+    height: 0;
+    padding-bottom: 56.25%; /* Rasio aspek 16:9 agar peta terlihat proporsional */
+}
+
+.maps-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Lebar penuh iframe */
+    height: 100%; /* Tinggi penuh iframe sesuai container */
+    border: 0; /* Menghilangkan border iframe */
+}
+
+
+/* Sosial Media */
+.sosial-media {
+    background-color: #710404; /* Mengatur warna latar belakang bagian sosial media */
+    color: white; /* Mengatur warna teks menjadi putih */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    padding: 20px 0; /* Menambahkan padding vertikal pada bagian sosial media */
+}
+
+.sosial-media a {
+    color: white; /* Mengatur warna link menjadi putih */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    margin: 0 10px; /* Menambahkan jarak horizontal di antara link */
+}
+
+.sosial-media a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah pada link saat di-hover */
+}
+
+/* Animasi garis merah di bawah judul */
+h1 {
+    font-weight: normal; /* Mengatur berat font pada judul menjadi normal */
+    font-size: 35px; /* Mengatur ukuran font judul */
+    position: relative; /* Menjadikan posisi relatif untuk elemen pseudo yang akan dibuat */
+    margin: 40px 0; /* Menambahkan margin vertikal pada judul */
+}
+
+h1::before {
+    content: ''; /* Membuat elemen pseudo sebelum judul */
+    position: absolute; /* Menempatkan elemen pseudo secara absolut di dalam h1 */
+    width: 100px; /* Lebar garis awal */
+    height: 3px; /* Tinggi garis */
+    background-color: #572d2d; /* Mengatur warna garis menjadi merah */
+    bottom: -10px; /* Menempatkan garis di bawah judul */
+    left: 50%; /* Menempatkan garis di tengah */
+    transform: translateX(-50%); /* Menggeser posisi garis agar tepat di tengah */
+    animation: animate 4s linear infinite; /* Menjalankan animasi secara terus menerus */
+}
+
+@keyframes animate {
+    0% { width: 100px; } /* Awal animasi, lebar garis 100px */
+    50% { width: 200px; } /* Di tengah animasi, lebar garis menjadi 200px */
+    100% { width: 100px; } /* Di akhir animasi, lebar kembali menjadi 100px */
+}
+
+/* Style responsif */
+@media (max-width: 768px) {
+    /* Header */
+    .header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        width: 100%;
+        position: relative;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 15px
+    }
+
+    .hamburger-menu .bar {
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+
+    nav.nav{
+        display: none;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        left: 0;
+        padding: 10px 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1px);
+
+    }
+
+    .nav-item {
+        flex-direction: column;
+    }
+
+    .nav-item li {
+        margin: 10px 0;
+    }
+
+    .logo img {
+        max-height: 50px;
+    }
+
+    .nav-item li a {
+        font-size: 16px;
+    }
+
+    /* Banner */
+    .benner {
+        height: 70vh; /* Kurangi tinggi banner untuk layar yang lebih kecil */
+    }
+
+    .welcome {
+        font-size: 1.5em; /* Sesuaikan ukuran teks */
+    }
+
+    .active{
+        display: block;
+    }
+}
+
+/* Style untuk layar desktop besar */
+@media (min-width: 1200px) {
+    .welcome {
+        font-size: 2.5em;
+    }
+}
